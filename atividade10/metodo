@@ -1,0 +1,60 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Escola escola = new Escola("Escola Java");
+
+        Endereco endereco = new Endereco(
+            "Rua das Flores", 100, "Belo Horizonte"
+        );
+
+        Aluno aluno = new Aluno(
+            "Rafael", 20, "12345678900",
+            "2026001", endereco
+        );
+
+        Professor professor = new Professor(
+            "Carlos", 35, "98765432100",
+            "Programação Java"
+        );
+
+        Curso curso = new Curso(
+            "Análise e Desenvolvimento de Sistemas", 5
+        );
+
+        Disciplina disciplina = new Disciplina(
+            "Programação Java", 80
+        );
+
+        Turma turma = new Turma("T01", curso, professor);
+
+        Matricula matricula = new Matricula(aluno, turma);
+
+        Nota nota = new Nota(aluno, disciplina, 9.5);
+
+        System.out.println("--- ESCOLA ---");
+        escola.apresentarEscola();
+
+        System.out.println("\n--- ALUNO ---");
+        aluno.falar();
+        aluno.estudar();
+        aluno.exibirEndereco();
+
+        System.out.println("\n--- PROFESSOR ---");
+        professor.ensinar();
+
+        System.out.println("\n--- CURSO ---");
+        curso.exibirCurso();
+
+        System.out.println("\n--- DISCIPLINA ---");
+        disciplina.exibirDisciplina();
+
+        System.out.println("\n--- MATRÍCULA ---");
+        matricula.confirmarMatricula();
+
+        System.out.println("\n--- NOTA ---");
+        nota.exibirNota();
+
+        System.out.println("\n--- ESCOLA ---");
+        escola.receberAluno(aluno);
+    }
+}
